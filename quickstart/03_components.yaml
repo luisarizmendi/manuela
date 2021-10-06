@@ -539,7 +539,7 @@ spec:
   source:
     contextDir: components/iot-consumer
     git:
-      uri: https://github.com/sa-mw-dach/manuela-dev.git
+      uri: https://github.com/luisarizmendi/manuela-dev.git
     type: Git
   strategy:
     sourceStrategy:
@@ -576,7 +576,7 @@ spec:
   source:
     contextDir: components/iot-frontend
     git:
-      uri: https://github.com/sa-mw-dach/manuela-dev.git
+      uri: https://github.com/luisarizmendi/manuela-dev.git
     type: Git
   strategy:
     sourceStrategy:
@@ -617,7 +617,7 @@ spec:
     contextDir: components/iot-software-sensor
     git:
       ref: master
-      uri: https://github.com/sa-mw-dach/manuela-dev.git
+      uri: https://github.com/luisarizmendi/manuela-dev.git
     type: Git
   strategy:
     sourceStrategy:
