@@ -29,7 +29,7 @@ You are going to deploy two manuela instances:
 
 ## Prepare your own instance of the gitops repository
 
-Fork [https://github.com/sa-mw-dach/manuela-gitops.git](https://github.com/sa-mw-dach/manuela-gitops.git) into your own GitHub organisation (you will need to make changes in this repo).
+Fork [https://github.com/luisarizmendi/manuela-gitops.git](https://github.com/luisarizmendi/manuela-gitops.git) into your own GitHub organisation (you will need to make changes in this repo).
 
 Clone the forked repo to your local home directory (you can chose a different base directory and repo name, but this document assumes the repo is present under ~/manuela-gitops):
 ```bash
@@ -78,7 +78,7 @@ git push
 
 Create "iotdemo" and "argocd" namespaces and required operator subscriptions: 
 ```bash
-oc apply -f https://raw.githubusercontent.com/sa-mw-dach/manuela/master/quickstart/01_namespaces_and_operators.yaml
+oc apply -f https://raw.githubusercontent.com/luisarizmendi/manuela/master/quickstart/01_namespaces_and_operators.yaml
 ```
 
 Wait until the argocd operator is installed. This might take a short while. You can check the output of the following command to validate which installplan and CSV is instantiated:
@@ -91,7 +91,7 @@ argocd-operator	install-29bkp	argocd-operator.v0.0.11
 
 Create ArgoCD instance:
 ```bash
-oc apply -f https://raw.githubusercontent.com/sa-mw-dach/manuela/master/quickstart/02_argocd.yaml
+oc apply -f https://raw.githubusercontent.com/luisarizmendi/manuela/master/quickstart/02_argocd.yaml
 ```
 
 These two steps are performed separately due to the lifecycle of the operator and the custom resources it manages. The first step creates operator subscriptions which in turn advises the OLM to instantiate the operator, which then registers its CRD in the system. Only once the CRDs are registered, the custom resources can be created. This is why these two things cannot be done in a single transaction.
@@ -171,10 +171,10 @@ Wait for ArgoCD to sync the changed configuration (you can also trigger a sync v
 
 Create build configurations and deployments for the components in the ```iotdemo``` namespace:
 ```bash
-oc apply -f https://raw.githubusercontent.com/sa-mw-dach/manuela/master/quickstart/03_components.yaml
+oc apply -f https://raw.githubusercontent.com/luisarizmendi/manuela/master/quickstart/03_components.yaml
 ```
 
-These build configs point to the [https://github.com/sa-mw-dach/manuela-dev](https://github.com/sa-mw-dach/manuela-dev) repository. Use ```oc edit``` to point them to your own fork of the repository if you wish.
+These build configs point to the [https://github.com/luisarizmendi/manuela-dev](https://github.com/luisarizmendi/manuela-dev) repository. Use ```oc edit``` to point them to your own fork of the repository if you wish.
 
 Also, if you are NOT using CRC, change the configmap URL to fit your cluster's application base domain:
  ```bash
