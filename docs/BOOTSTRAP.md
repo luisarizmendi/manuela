@@ -208,7 +208,7 @@ argocd-operator-65dcf99d75-htjq4                 1/1     Running             0  
 Then instantiate ArgoCD and allow its service account to manage the cluster
 ```bash
 oc apply -k infrastructure/argocd
-oc adm policy add-cluster-role-to-user cluster-admin -n argocd -z argocd-application-controller
+oc adm policy add-cluster-role-to-user cluster-admin -n argocd -z argocd-argocd-application-controller
 ```
 
 Wait for the argocd resources to be created
