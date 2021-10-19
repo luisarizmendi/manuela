@@ -6,6 +6,8 @@ resources:
 - amq-broker.yaml
 - messaging-deployment.yaml
 - messaging-svc.yaml
+- messaging-is.yaml
+- messaging-route.yaml
 
 configMapGenerator:
 - name: messaging-configmap

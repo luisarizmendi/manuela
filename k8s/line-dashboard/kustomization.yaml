@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
 - line-dashboard-deployment.yaml
 - line-dashboard-svc.yaml
+- line-dashboard-is.yaml
+- line-dashboard-route.yaml
 
 configMapGenerator:
 - name: line-dashboard-configmap

@@ -5,3 +5,4 @@ resources:
 - seldon-subscription.yaml
 - iot-anomaly-detection-route.yaml    
 - iot-anomaly-detection-seldon.yaml
+- anomaly-detection-is.yaml
